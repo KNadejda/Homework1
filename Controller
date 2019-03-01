@@ -1,0 +1,36 @@
+package KNO;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+public class Controller {
+
+    @FXML
+    private TextField inputText;
+
+    @FXML
+    private Label resultLabel;
+
+    public void ToHex(ActionEvent event) {
+        try {
+            String inputString = inputTextField.getText();
+            Integer inputNumber = Integer.parseInt(inputString);
+            String result = Integer.toHexString(inputNumber);
+            resultLabel.setText(result);
+        } catch (Exception e) {
+            resultLabel.setText("Error");
+        }
+    }
+
+    public void ToOctal(ActionEvent event) {
+        try {
+            String inputString = inputTextField.getText();
+            Integer inputNumber = Integer.parseInt(inputString);
+            String result = Integer.toOctalString(inputNumber);
+            resultLabel.setText(result);
+        } catch (Exception e) {
+            resultLabel.setText("Error");
+        }
+    }
+}
